@@ -216,6 +216,10 @@
   will-change: transform;
 }
 
+.band-diagonal {
+  clip-path: polygon(22% 0, 100% 0, 78% 100%, 0 100%);
+}
+
 .band-delay-0 {
   animation-delay: 0ms;
 }

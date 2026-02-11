@@ -16,9 +16,9 @@ export function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-[#020617] text-[#111827] dark:text-[#E2E8F0]">
         {/* Three diagonal club-color bands with staggered entrance from the right */}
-        <div className="absolute inset-y-0 left-[18%] w-[18%] bg-[#D32F2F]/92 -skew-x-[28deg] band-enter band-delay-0"></div>
-        <div className="absolute inset-y-0 left-[34%] w-[14%] bg-[#D4AF37]/86 -skew-x-[28deg] band-enter band-delay-1"></div>
-        <div className="absolute inset-y-0 left-[46%] w-[18%] bg-[#2E7D32]/90 -skew-x-[28deg] band-enter band-delay-2"></div>
+        <div className="absolute inset-y-0 left-[18%] w-[18%] bg-[#D32F2F]/92 band-diagonal band-enter band-delay-0"></div>
+        <div className="absolute inset-y-0 left-[34%] w-[14%] bg-[#D4AF37]/86 band-diagonal band-enter band-delay-1"></div>
+        <div className="absolute inset-y-0 left-[46%] w-[18%] bg-[#2E7D32]/90 band-diagonal band-enter band-delay-2"></div>
 
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-20 md:py-32">
           <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
