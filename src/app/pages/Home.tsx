@@ -18,7 +18,7 @@ export function Home() {
         {/* Club color base blend: red + green with depth */}
         <div className="absolute inset-0 bg-[linear-gradient(135deg,#8F1D1D_0%,#C62828_38%,#1F6B2A_72%,#13461D_100%)]"></div>
         {/* Gold grid to match club identity accents */}
-        <div className="absolute inset-0 opacity-[0.25] [background-image:linear-gradient(to_right,rgba(212,175,55,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.45)_1px,transparent_1px)] [background-size:52px_52px]"></div>
+        <div className="absolute inset-0 opacity-[0.25] [background-image:linear-gradient(to_right,rgba(212,175,55,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.45)_1px,transparent_1px)] [background-size:52px_52px] grid-drift"></div>
         {/* Soft glow layers for a richer hero atmosphere */}
         <div className="absolute -top-28 -left-20 w-[380px] h-[380px] rounded-full bg-[#D4AF37]/20 blur-3xl"></div>
         <div className="absolute -bottom-24 right-[-60px] w-[340px] h-[340px] rounded-full bg-[#0F3D18]/45 blur-3xl"></div>
@@ -28,43 +28,43 @@ export function Home() {
           <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             <div className={`space-y-6 ${isRTL ? 'lg:col-start-2 text-right' : ''}`}>
               {/* Slogan */}
-              <div className="mb-4">
+              <div className="mb-4 reveal-up">
                 <p className="text-lg md:text-xl font-semibold text-white/95 tracking-wide">
                   {t('hero.slogan')}
                 </p>
               </div>
               
-              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium backdrop-blur-sm">
+              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium backdrop-blur-sm reveal-up reveal-delay-1">
                 {t('hero.newCollection')}
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight reveal-up reveal-delay-2">
                 {t('hero.title')}
               </h1>
-              <p className="text-lg text-white/90 max-w-md">
+              <p className="text-lg text-white/90 max-w-md reveal-up reveal-delay-3">
                 {t('hero.description')}
               </p>
-              <div className={`flex flex-wrap gap-4 ${isRTL ? 'justify-end' : ''}`}>
+              <div className={`flex flex-wrap gap-4 ${isRTL ? 'justify-end' : ''} reveal-up reveal-delay-4`}>
                 <Link
                   to="/shop"
-                  className={`inline-flex items-center gap-2 px-8 py-4 bg-white text-[#D32F2F] rounded-xl font-semibold hover:bg-gray-100 transition-colors ${isRTL ? 'flex-row-reverse' : ''}`}
+                  className={`inline-flex items-center gap-2 px-8 py-4 bg-white text-[#D32F2F] rounded-xl font-semibold hover:bg-gray-100 transition-colors hover-lift ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
                   {t('btn.shopNow')}
                   <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
                 <Link
                   to="/shop"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-colors hover-lift"
                 >
                   {t('btn.viewCollection')}
                 </Link>
               </div>
             </div>
-            <div className={`relative hidden lg:block ${isRTL ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+            <div className={`relative hidden lg:block reveal-right reveal-delay-2 ${isRTL ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
               <div className="absolute inset-0 bg-white/10 rounded-3xl rotate-6"></div>
               <ImageWithFallback
                 src={aliAmmarStadiumImage}
                 alt="Ali Ammar Stadium"
-                className="relative rounded-3xl shadow-2xl w-full h-[520px] object-cover object-center"
+                className="relative rounded-3xl shadow-2xl w-full h-[520px] object-cover object-center float-soft"
               />
             </div>
           </div>
@@ -74,7 +74,7 @@ export function Home() {
 
       {/* Best Sellers */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-16 md:py-24">
-        <div className={`flex items-center justify-between mb-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
+        <div className={`flex items-center justify-between mb-8 reveal-up ${isRTL ? 'flex-row-reverse' : ''}`}>
           <div className={isRTL ? 'text-right' : ''}>
             <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-2">
               {t('page.bestSellers')}
@@ -92,7 +92,7 @@ export function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up reveal-delay-1">
           {bestSellers.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -113,7 +113,7 @@ export function Home() {
       <section className="bg-[#F9FAFB] py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className={`flex items-start gap-4 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+            <div className={`flex items-start gap-4 reveal-up ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
               <div className="w-12 h-12 bg-[#2E7D32] rounded-xl flex items-center justify-center flex-shrink-0">
                 <Truck className="w-6 h-6 text-white" />
               </div>
@@ -125,7 +125,7 @@ export function Home() {
               </div>
             </div>
 
-            <div className={`flex items-start gap-4 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+            <div className={`flex items-start gap-4 reveal-up reveal-delay-1 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
               <div className="w-12 h-12 bg-[#2E7D32] rounded-xl flex items-center justify-center flex-shrink-0">
                 <RotateCcw className="w-6 h-6 text-white" />
               </div>
@@ -137,7 +137,7 @@ export function Home() {
               </div>
             </div>
 
-            <div className={`flex items-start gap-4 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+            <div className={`flex items-start gap-4 reveal-up reveal-delay-2 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
               <div className="w-12 h-12 bg-[#2E7D32] rounded-xl flex items-center justify-center flex-shrink-0">
                 <Shield className="w-6 h-6 text-white" />
               </div>
@@ -154,7 +154,7 @@ export function Home() {
 
       {/* Newsletter */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-16 md:py-24">
-        <div className={`bg-gradient-to-br from-[#111827] to-[#374151] rounded-3xl p-8 md:p-12 text-white text-center ${isRTL ? 'text-right' : ''}`}>
+        <div className={`bg-gradient-to-br from-[#111827] to-[#374151] rounded-3xl p-8 md:p-12 text-white text-center reveal-up ${isRTL ? 'text-right' : ''}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {t('newsletter.title')}
           </h2>
