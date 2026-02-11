@@ -14,46 +14,40 @@ export function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative text-white overflow-hidden">
-        {/* Club color base blend: red + green with depth */}
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,#8F1D1D_0%,#C62828_38%,#1F6B2A_72%,#13461D_100%)]"></div>
-        {/* Gold grid to match club identity accents */}
-        <div className="absolute inset-0 opacity-[0.25] [background-image:linear-gradient(to_right,rgba(212,175,55,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.45)_1px,transparent_1px)] [background-size:52px_52px] grid-drift"></div>
-        {/* Soft glow layers for a richer hero atmosphere */}
-        <div className="absolute -top-28 -left-20 w-[380px] h-[380px] rounded-full bg-[#D4AF37]/20 blur-3xl"></div>
-        <div className="absolute -bottom-24 right-[-60px] w-[340px] h-[340px] rounded-full bg-[#0F3D18]/45 blur-3xl"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.16),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(255,215,120,0.12),transparent_40%)]"></div>
+      <section className="relative overflow-hidden bg-white dark:bg-[#020617] text-[#111827] dark:text-[#E2E8F0]">
+        {/* Three diagonal club-color bands over a white/dark base */}
+        <div className="absolute inset-0 [background-image:linear-gradient(125deg,transparent_0%,transparent_28%,rgba(211,47,47,0.92)_28%,rgba(211,47,47,0.92)_40%,rgba(212,175,55,0.86)_40%,rgba(212,175,55,0.86)_52%,rgba(46,125,50,0.9)_52%,rgba(46,125,50,0.9)_64%,transparent_64%,transparent_100%)]"></div>
 
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-20 md:py-32">
           <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
-            <div className={`space-y-6 ${isRTL ? 'lg:col-start-2 text-right' : ''}`}>
+            <div className={`space-y-6 bg-white/80 dark:bg-[#020617]/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 ${isRTL ? 'lg:col-start-2 text-right' : ''}`}>
               {/* Slogan */}
               <div className="mb-4 reveal-up">
-                <p className="text-lg md:text-xl font-semibold text-white/95 tracking-wide">
+                <p className="text-lg md:text-xl font-semibold text-[#111827] dark:text-[#E2E8F0] tracking-wide">
                   {t('hero.slogan')}
                 </p>
               </div>
               
-              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium backdrop-blur-sm reveal-up reveal-delay-1">
+              <div className="inline-block px-4 py-2 bg-[#111827]/10 dark:bg-white/10 rounded-full text-sm font-medium reveal-up reveal-delay-1">
                 {t('hero.newCollection')}
               </div>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight reveal-up reveal-delay-2">
                 {t('hero.title')}
               </h1>
-              <p className="text-lg text-white/90 max-w-md reveal-up reveal-delay-3">
+              <p className="text-lg text-[#374151] dark:text-[#CBD5E1] max-w-md reveal-up reveal-delay-3">
                 {t('hero.description')}
               </p>
               <div className={`flex flex-wrap gap-4 ${isRTL ? 'justify-end' : ''} reveal-up reveal-delay-4`}>
                 <Link
                   to="/shop"
-                  className={`inline-flex items-center gap-2 px-8 py-4 bg-white text-[#D32F2F] rounded-xl font-semibold hover:bg-gray-100 transition-colors hover-lift ${isRTL ? 'flex-row-reverse' : ''}`}
+                  className={`inline-flex items-center gap-2 px-8 py-4 bg-[#D32F2F] text-white rounded-xl font-semibold hover:bg-[#B71C1C] transition-colors hover-lift ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
                   {t('btn.shopNow')}
                   <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
                 <Link
                   to="/shop"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-colors hover-lift"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#111827] dark:border-[#E2E8F0] text-[#111827] dark:text-[#E2E8F0] rounded-xl font-semibold hover:bg-black/5 dark:hover:bg-white/10 transition-colors hover-lift"
                 >
                   {t('btn.viewCollection')}
                 </Link>
@@ -69,7 +63,7 @@ export function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/10 dark:from-black/30 to-transparent"></div>
       </section>
 
       {/* Best Sellers */}
