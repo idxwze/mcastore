@@ -87,6 +87,36 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+/* Quick dark theme overrides for existing fixed-color utility classes.
+   This keeps the current UI readable in dark mode without rewriting every page. */
+.dark .bg-white {
+  background-color: #0b1220 !important;
+}
+
+.dark .bg-\[\#F9FAFB\] {
+  background-color: #111827 !important;
+}
+
+.dark .border-\[\#E5E7EB\] {
+  border-color: #334155 !important;
+}
+
+.dark .text-\[\#111827\] {
+  color: #e2e8f0 !important;
+}
+
+.dark .text-\[\#6B7280\] {
+  color: #94a3b8 !important;
+}
+
+.dark .hover\:bg-\[\#F9FAFB\]:hover {
+  background-color: #1e293b !important;
+}
+
+.dark .hover\:bg-\[\#E5E7EB\]:hover {
+  background-color: #334155 !important;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

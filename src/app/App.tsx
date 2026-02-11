@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { CartProvider } from './context/CartContext';
 import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -17,32 +18,34 @@ import { Contact } from './pages/Contact';
 export default function App() {
   return (
     <BrowserRouter>
-      {/* LanguageProvider controls i18n + RTL. CartProvider controls cart state app-wide. */}
-      <LanguageProvider>
-        <CartProvider>
-          <div className="min-h-screen bg-white flex flex-col">
-            <Header />
-            <main className="flex-1">
-              <Routes>
-                {/* Main shopping flow */}
-                <Route path="/" element={<Home />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/product/:id" element={<Product />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/confirmation" element={<Confirmation />} />
-                <Route path="/contact" element={<Contact />} />
+      <ThemeProvider>
+        {/* LanguageProvider controls i18n + RTL. CartProvider controls cart state app-wide. */}
+        <LanguageProvider>
+          <CartProvider>
+            <div className="min-h-screen bg-white dark:bg-[#020617] flex flex-col transition-colors">
+              <Header />
+              <main className="flex-1">
+                <Routes>
+                  {/* Main shopping flow */}
+                  <Route path="/" element={<Home />} />
+                  <Route path="/shop" element={<Shop />} />
+                  <Route path="/product/:id" element={<Product />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/checkout" element={<Checkout />} />
+                  <Route path="/confirmation" element={<Confirmation />} />
+                  <Route path="/contact" element={<Contact />} />
 
-                {/* Supporting pages */}
-                <Route path="/size-guide" element={<SizeGuidePage />} />
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-            </main>
-            <Footer />
-            <Toaster position="top-right" richColors />
-          </div>
-        </CartProvider>
-      </LanguageProvider>
+                  {/* Supporting pages */}
+                  <Route path="/size-guide" element={<SizeGuidePage />} />
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </main>
+              <Footer />
+              <Toaster position="top-right" richColors />
+            </div>
+          </CartProvider>
+        </LanguageProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
