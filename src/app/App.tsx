@@ -13,15 +13,18 @@ import { Checkout } from './pages/Checkout';
 import { Confirmation } from './pages/Confirmation';
 import { Contact } from './pages/Contact';
 
+// Keep all top-level routes in one place so it is easy to scan the app structure.
 export default function App() {
   return (
     <BrowserRouter>
+      {/* LanguageProvider controls i18n + RTL. CartProvider controls cart state app-wide. */}
       <LanguageProvider>
         <CartProvider>
           <div className="min-h-screen bg-white flex flex-col">
             <Header />
             <main className="flex-1">
               <Routes>
+                {/* Main shopping flow */}
                 <Route path="/" element={<Home />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/product/:id" element={<Product />} />
@@ -29,6 +32,8 @@ export default function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/confirmation" element={<Confirmation />} />
                 <Route path="/contact" element={<Contact />} />
+
+                {/* Supporting pages */}
                 <Route path="/size-guide" element={<SizeGuidePage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
