@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Truck, RotateCcw, Shield, ArrowRight } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 import { products } from '../data/products';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { ImageWithFallback } from '../components/common/ImageWithFallback';
 import { useLanguage } from '../context/LanguageContext';
 import aliAmmarStadiumImage from '../../assets/ali-ammar-stadium.jpg';
 
@@ -14,8 +14,17 @@ export function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#D32F2F] to-[#B71C1C] text-white overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-20 md:py-32">
+      <section className="relative text-white overflow-hidden">
+        {/* Club color base blend: red + green with depth */}
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#8F1D1D_0%,#C62828_38%,#1F6B2A_72%,#13461D_100%)]"></div>
+        {/* Gold grid to match club identity accents */}
+        <div className="absolute inset-0 opacity-[0.25] [background-image:linear-gradient(to_right,rgba(212,175,55,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.45)_1px,transparent_1px)] [background-size:52px_52px]"></div>
+        {/* Soft glow layers for a richer hero atmosphere */}
+        <div className="absolute -top-28 -left-20 w-[380px] h-[380px] rounded-full bg-[#D4AF37]/20 blur-3xl"></div>
+        <div className="absolute -bottom-24 right-[-60px] w-[340px] h-[340px] rounded-full bg-[#0F3D18]/45 blur-3xl"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.16),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(255,215,120,0.12),transparent_40%)]"></div>
+
+        <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-20 md:py-32">
           <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             <div className={`space-y-6 ${isRTL ? 'lg:col-start-2 text-right' : ''}`}>
               {/* Slogan */}
@@ -60,7 +69,7 @@ export function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/20 to-transparent"></div>
       </section>
 
       {/* Best Sellers */}

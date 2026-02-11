@@ -116,7 +116,7 @@ export function Header() {
 
             {/* Account */}
             <Link
-              to="/account"
+              to="/contact"
               className="p-2 hover:bg-[#F9FAFB] rounded-lg transition-colors"
             >
               <User className="w-5 h-5 text-[#6B7280]" />

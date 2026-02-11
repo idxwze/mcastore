@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { CreditCard, Wallet, ChevronRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { ImageWithFallback } from '../components/common/ImageWithFallback';
+
+function generateOrderNumber() {
+  const randomPart = Math.random().toString(36).slice(2, 11).toUpperCase();
+  return `MCA${randomPart}`;
+}
 
 export function Checkout() {
   const { cartItems, cartTotal, clearCart } = useCart();
@@ -23,7 +28,7 @@ export function Checkout() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const orderNumber = 'MCA' + Math.random().toString(36).substr(2, 9).toUpperCase();
+    const orderNumber = generateOrderNumber();
     clearCart();
     navigate('/confirmation', { state: { orderNumber, orderData: formData, total } });
   };
@@ -33,8 +38,7 @@ export function Checkout() {
   };
 
   if (cartItems.length === 0) {
-    navigate('/cart');
-    return null;
+    return <Navigate to="/cart" replace />;
   }
 
   return (

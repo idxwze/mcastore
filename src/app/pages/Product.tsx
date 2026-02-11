@@ -4,7 +4,7 @@ import { Star, Minus, Plus, ShoppingCart, Heart, Share2, Truck, RotateCcw, Shiel
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { ImageWithFallback } from '../components/common/ImageWithFallback';
 import { toast } from 'sonner';
 
 export function Product() {

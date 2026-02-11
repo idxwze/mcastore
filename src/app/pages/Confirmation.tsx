@@ -8,7 +8,7 @@ export function Confirmation() {
   const { t, isRTL } = useLanguage();
   const { orderNumber, orderData, total } = location.state || {};
 
-  if (!orderNumber) {
+  if (!orderNumber || !orderData) {
     return <Navigate to="/" replace />;
   }
 
@@ -105,7 +105,7 @@ export function Confirmation() {
             <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
           </Link>
           <Link
-            to="/track"
+            to="/contact"
             className="flex-1 px-8 py-4 bg-white border-2 border-[#E5E7EB] hover:bg-[#F9FAFB] text-[#111827] rounded-xl font-semibold text-center transition-colors"
           >
             Track Order
