@@ -15,8 +15,10 @@ export function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-[#020617] text-[#111827] dark:text-[#E2E8F0]">
-        {/* Three diagonal club-color bands over a white/dark base */}
-        <div className="absolute inset-0 [background-image:linear-gradient(125deg,transparent_0%,transparent_28%,rgba(211,47,47,0.92)_28%,rgba(211,47,47,0.92)_40%,rgba(212,175,55,0.86)_40%,rgba(212,175,55,0.86)_52%,rgba(46,125,50,0.9)_52%,rgba(46,125,50,0.9)_64%,transparent_64%,transparent_100%)]"></div>
+        {/* Three diagonal club-color bands with staggered entrance from the right */}
+        <div className="absolute inset-y-0 left-[18%] w-[18%] bg-[#D32F2F]/92 -skew-x-[28deg] band-enter band-delay-0"></div>
+        <div className="absolute inset-y-0 left-[34%] w-[14%] bg-[#D4AF37]/86 -skew-x-[28deg] band-enter band-delay-1"></div>
+        <div className="absolute inset-y-0 left-[46%] w-[18%] bg-[#2E7D32]/90 -skew-x-[28deg] band-enter band-delay-2"></div>
 
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-20 md:py-32">
           <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-dense' : ''}`}>

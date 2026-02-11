@@ -159,6 +159,17 @@
   }
 }
 
+@keyframes slide-band-in {
+  from {
+    transform: translateX(120%);
+    opacity: 0.95;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .reveal-up {
   animation: reveal-up 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -200,11 +211,29 @@
   box-shadow: 0 16px 30px rgba(2, 6, 23, 0.14);
 }
 
+.band-enter {
+  animation: slide-band-in 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform;
+}
+
+.band-delay-0 {
+  animation-delay: 0ms;
+}
+
+.band-delay-1 {
+  animation-delay: 220ms;
+}
+
+.band-delay-2 {
+  animation-delay: 420ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-up,
   .reveal-right,
   .float-soft,
   .grid-drift,
+  .band-enter,
   .hover-lift,
   .hover-lift:hover {
     animation: none !important;
