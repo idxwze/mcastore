@@ -5,6 +5,7 @@ import { ProductCard } from '../components/ProductCard';
 import { products } from '../data/products';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useLanguage } from '../context/LanguageContext';
+import aliAmmarStadiumImage from '../../assets/ali-ammar-stadium.jpg';
 
 export function Home() {
   const { t, isRTL } = useLanguage();
@@ -52,9 +53,9 @@ export function Home() {
             <div className={`relative hidden lg:block ${isRTL ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
               <div className="absolute inset-0 bg-white/10 rounded-3xl rotate-6"></div>
               <ImageWithFallback
-                src="https://source.unsplash.com/600x800/?algeria,football,jersey,red"
-                alt="MCA Jersey 24/25"
-                className="relative rounded-3xl shadow-2xl"
+                src={aliAmmarStadiumImage}
+                alt="Ali Ammar Stadium"
+                className="relative rounded-3xl shadow-2xl w-full h-[520px] object-cover object-center"
               />
             </div>
           </div>
