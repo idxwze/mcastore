@@ -1,6 +1,7 @@
 # MCA Store
 
 Frontend-only React application built for an MCA-themed e-commerce experience.
+student project / not official 
 
 ## Links
 
