@@ -4,7 +4,14 @@ import fs from 'fs'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
+const rawBase = process.env.VITE_BASE ?? '/'
+const baseWithLeadingSlash = rawBase.startsWith('/') ? rawBase : `/${rawBase}`
+const base = baseWithLeadingSlash.endsWith('/')
+  ? baseWithLeadingSlash
+  : `${baseWithLeadingSlash}/`
+
 export default defineConfig({
+  base,
   plugins: [
     {
       name: 'figma-asset-resolver',

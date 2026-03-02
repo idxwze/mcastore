@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { CartProvider } from './context/CartContext';
 import { LanguageProvider } from './context/LanguageContext';
@@ -17,7 +17,7 @@ import { Contact } from './pages/Contact';
 // Keep all top-level routes in one place so it is easy to scan the app structure.
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ThemeProvider>
         {/* LanguageProvider controls i18n + RTL. CartProvider controls cart state app-wide. */}
         <LanguageProvider>
@@ -46,7 +46,7 @@ export default function App() {
           </CartProvider>
         </LanguageProvider>
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
@@ -118,12 +118,12 @@ function NotFoundPage() {
     <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20 py-16 text-center">
       <h1 className="text-6xl font-bold text-[#111827] mb-4">404</h1>
       <p className="text-xl text-[#6B7280] mb-8">Page not found</p>
-      <a
-        href="/"
+      <Link
+        to="/"
         className="inline-block px-8 py-4 bg-[#D32F2F] hover:bg-[#B71C1C] text-white rounded-xl font-semibold transition-colors"
       >
         Go Home
-      </a>
+      </Link>
     </div>
   );
 }
