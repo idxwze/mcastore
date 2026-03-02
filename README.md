@@ -1,8 +1,8 @@
 # MCA Store
 
 Frontend-only React application built for an MCA-themed e-commerce experience.
-student project / not official 
-
+student project / not official. 
+Design inspired by a Figma mockup; implementation in React + Vite.
 ## Links
 
 - Live Demo: `https://idxwze.github.io/mcastore/`
