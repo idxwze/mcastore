@@ -5,8 +5,8 @@ student project / not official
 
 ## Links
 
-- Live Demo: `PASTE_GITHUB_PAGES_URL_HERE`
-- Repository: `PASTE_GITHUB_REPO_URL_HERE`
+- Live Demo: `https://idxwze.github.io/mcastore/`
+- Repository: `https://github.com/idxwze/mcastore.git`
 
 ## Course Submission Notes
 
